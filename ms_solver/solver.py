@@ -2,6 +2,9 @@ from ms_generate.generator import FieldGenerator
 
 
 class FieldSolver:
+    def __init__(self):
+        self.field = []
+
     def mine_count(self, f: FieldGenerator, x_cor: int, y_cor: int):
         counter = 0
 
@@ -23,3 +26,8 @@ class FieldSolver:
             counter += 1
 
         return counter
+
+    def load_field(self, path):
+        with open(path, 'r') as file:
+            for line in file.readlines():
+                self.field.append([x for x in line.strip()])

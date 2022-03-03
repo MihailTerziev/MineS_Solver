@@ -54,12 +54,6 @@ class FieldGenerator:
         else:
             self.__fill(self.map_size, delimiter)
 
-    def save_field(self, file_path):
-        with open(file_path, 'w') as file:
+    def save_field(self, path):
+        with open(path, 'w') as file:
             file.write(self.__str__())
-
-
-if __name__ == '__main__':
-    g = FieldGenerator(5)
-    g.create_field(3)
-    print(g)
