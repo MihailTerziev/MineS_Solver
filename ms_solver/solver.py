@@ -2,7 +2,7 @@ from ms_generate.generator import FieldGenerator
 
 
 class FieldSolver:
-    def count_bombs_around(self, f: FieldGenerator, x_cor: int, y_cor: int):
+    def mine_count(self, f: FieldGenerator, x_cor: int, y_cor: int):
         counter = 0
 
         if not x_cor == 0 and f.field[x_cor - 1][y_cor] == 'X':
