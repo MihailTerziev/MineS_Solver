@@ -9,6 +9,14 @@ class FieldGenerator:
             output += f"{' '.join(row)}\n"
         return output.strip()
 
+    @property
+    def map_size(self):
+        return self.__map_size
+
+    @property
+    def field(self):
+        return self.__field
+
     def load_mines(self, mine_count: int):
         if mine_count <= 0:
             raise Exception("Number of mines must be non-zero positive number!")
