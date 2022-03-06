@@ -1,24 +1,13 @@
 class FieldGenerator:
     def __init__(self, map_size: int):
-        self.map_size = map_size
-        self.__field = [['0' for _ in range(self.map_size)] for _ in range(self.map_size)]
+        self.__map_size = map_size
+        self.__field = [['0' for _ in range(self.__map_size)] for _ in range(self.__map_size)]
 
     def __str__(self):
         output = ""
         for row in self.__field:
             output += f"{' '.join(row)}\n"
         return output.strip()
-
-    @property
-    def map_size(self):
-        return self.__map_size
-
-    @map_size.setter
-    def map_size(self, new_size):
-        if new_size < 0:
-            raise ValueError("Map size can't be negative!")
-
-        self.__map_size = new_size
 
     def load_mines(self, mine_count: int):
         if mine_count <= 0:
